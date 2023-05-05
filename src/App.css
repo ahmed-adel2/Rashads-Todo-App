@@ -118,6 +118,23 @@ span{
     margin: 0px auto;
     justify-self: center;
 }
-input{
+.main-input-field{
     width: 100%;
+}
+.add-it-to-list{
+    color: #e8488a;
+    font-size:larger;
+    font-weight:900;
+    border: 2px solid #e8488a;
+    border-radius: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: 0.5s;
+}
+.add-it-to-list:hover{
+    background-color: yellow;
+    transform: scale(1.2);
+}
+.gotten-items{
+    font-size: large;
 }
