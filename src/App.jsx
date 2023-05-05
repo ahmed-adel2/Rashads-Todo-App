@@ -121,15 +121,15 @@ function TheBody() {
   return (
     <main>
       {/* the input field */}
-      <div className="form-control w-full max-w-sm ml-auto mr-auto mt-10">
+      <div className="input-holldder form-control max-w-sm ml-auto mr-auto mt-10">
         <label className="label">
           <i className="label-text font-medium italic text-lg">Your Todo Item</i>
         </label>
         <input type="text" placeholder="Type here"
           value={word} onChange={(e) => setWord(e.target.value)}
-          className="input input-bordered input-success w-full text-lg placeholder:text-base"
+          className="input input-bordered input-success text-lg placeholder:text-base"
         />
-        <button className="btn btn-secondary max-w-fit ml-auto mt-3"
+        <button className="btn btn-secondary w-fit ml-auto mt-3"
           onClick={addToList}
         >Add Item</button>
       </div>
