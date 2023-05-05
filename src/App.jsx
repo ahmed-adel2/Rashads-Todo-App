@@ -110,12 +110,12 @@ function TheBody() {
   function getLocal() {
     if (JSON.parse(localStorage.getItem("list"))) {
       return JSON.parse(localStorage.getItem("list")).map((each, index) => (
-        <div className='flex justify-between align-middle mb-2 ml-3'>
+        <div className='all-past-items flex justify-between align-middle mb-2 ml-3'>
           <div className='flex'>
           <h2 className='pt-2 mr-2 text-xl'>-</h2>
-          <input className='gotten-items inline text-start w-80' type='button' key={index} id={index} value={each} />
+          <input className='gotten-items inline text-start w-56' type='button' key={index} id={index} value={each} />
           </div>
-          <img className='add-it-to-list cursor-pointer ml-2 pb-1' width={40} onClick={()=>addLocaltoList(index)}  src="/add-icon.svg" />
+          <img className='add-it-to-list cursor-pointer' width={40} onClick={()=>addLocaltoList(index)}  src="/add-icon.svg" />
         </div>
       ))
     } else {
