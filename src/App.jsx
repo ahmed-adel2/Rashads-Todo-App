@@ -92,6 +92,10 @@ function TheBody() {
     { word === "" ? "" : setList(prev => [...prev, word]) }
   }
 
+  function addLocaltoList(index){
+    setList(prev=> [...prev,document.getElementById(`${index}`).value])
+  }
+
   const allListItems = list.map((list, index) => (
     <li key={index}>{list}</li>
   ))
@@ -106,7 +110,11 @@ function TheBody() {
   function getLocal() {
     if (JSON.parse(localStorage.getItem("list"))) {
       return JSON.parse(localStorage.getItem("list")).map((each, index) => (
-        <li key={index}>{each}</li>
+        <div className='flex justify-between align-middle mb-2 ml-3'>
+          <h2 className='pt-1 text-xl'>•</h2>
+          <input className='gotten-items inline text-start w-80 ml-3' type='button' key={index} id={index} value={each} />
+          <h2 className='add-it-to-list cursor-pointer ml-2 pb-1' onClick={()=>addLocaltoList(index)}>+</h2>
+        </div>
       ))
     } else {
       return <h2 className='not-found'>- No Todo List found 😢</h2>
@@ -118,6 +126,13 @@ function TheBody() {
     setList([])
   }
 
+  function EnterToTab(event){
+    if(event.keyCode===13){
+      addToList()
+      document.querySelector(".main-input-field").value===""
+    }
+  }
+
   return (
     <main>
       {/* the input field */}
@@ -126,11 +141,11 @@ function TheBody() {
           <i className="label-text font-medium italic text-lg">Your Todo Item</i>
         </label>
         <input type="text" placeholder="Type here"
-          value={word} onChange={(e) => setWord(e.target.value)}
-          className="input input-bordered input-success text-lg placeholder:text-base"
+          value={word} onChange={(e) => setWord(e.target.value)} onKeyDown={()=>EnterToTab(event)}
+          className="main-input-field input input-bordered input-success text-lg placeholder:text-base"
         />
         <button className="btn btn-secondary w-fit ml-auto mt-3"
-          onClick={addToList}
+          onClick={addToList} 
         >Add Item</button>
       </div>
 
