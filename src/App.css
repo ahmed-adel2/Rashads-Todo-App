@@ -123,16 +123,11 @@ span{
 }
 .add-it-to-list{
     color: #e8488a;
-    font-size:larger;
-    font-weight:900;
-    border: 2px solid #e8488a;
-    border-radius: 100%;
-    padding-left: 8px;
-    padding-right: 8px;
     transition: 0.5s;
+    border-radius: 100%;
 }
 .add-it-to-list:hover{
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.621);
     transform: scale(1.2);
 }
 .gotten-items{
