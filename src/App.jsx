@@ -113,7 +113,7 @@ function TheBody() {
         <div className='flex justify-between align-middle mb-2 ml-3'>
           <h2 className='pt-1 text-xl'>•</h2>
           <input className='gotten-items inline text-start w-80 ml-3' type='button' key={index} id={index} value={each} />
-          <h2 className='add-it-to-list cursor-pointer ml-2 pb-1' onClick={()=>addLocaltoList(index)}>+</h2>
+          <img className='add-it-to-list cursor-pointer ml-2 pb-1' width={40} onClick={()=>addLocaltoList(index)}  src="/add-icon.svg" />
         </div>
       ))
     } else {
