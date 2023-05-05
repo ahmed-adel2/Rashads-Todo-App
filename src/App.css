@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 @font-face {
     font-family: Cinzel Decorative;
     src: url("/CinzelDecorative-Black.otf");
